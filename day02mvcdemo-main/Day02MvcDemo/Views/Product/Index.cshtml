@@ -1,0 +1,22 @@
+﻿@model List<Day02MvcDemo.Models.Product>
+
+<h2>Danh sách sản phẩm</h2>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>ID</th>
+        <th>Tên sản phẩm</th>
+        <th>Giá</th>
+        <th>Chi tiết</th>
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Id</td>
+            <td>@p.Name</td>
+            <td>@p.Price VNĐ</td>
+            <td>
+                <a href="/Product/Detail/@p.Id">Xem chi tiết</a>
+            </td>
+        </tr>
+    }
+</table>

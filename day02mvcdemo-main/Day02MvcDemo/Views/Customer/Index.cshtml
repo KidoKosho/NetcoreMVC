@@ -1,0 +1,22 @@
+﻿@model List<Day02MvcDemo.Models.Customer>
+
+<h2>Danh sách khách hàng</h2>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>ID</th>
+        <th>Tên khách hàng</th>
+        <th>Email</th>
+        <th>Chi tiết</th>
+    </tr>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.Id</td>
+            <td>@c.Name</td>
+            <td>@c.Email</td>
+            <td>
+                <a asp-controller="Customer" asp-action="Profile" asp-route-id="@c.Id">Xem chi tiết</a>
+            </td>
+        </tr>
+    }
+</table>
